@@ -1,13 +1,5 @@
 # Development-configs
 
-## Create API (C# with .NET)
-
-1. Install dotnet SDK
-2. Navigate to the Desktop and run the following command in the terminal:
-```cmd
-dotnet new web -o nameProjectHere -f net7.0
-```
-
 ## Create API (NodeJS with ExpressJS)
 
 1. Install Node.js and npm (Node Package Manager)
@@ -32,5 +24,24 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
+```
+5. Run your Express application using the following command:
+```cmd
+node app.js
+```
 
+## Create API (C# with .NET)
+
+1. Install dotnet SDK from the official .NET website.
+2. Navigate to the Desktop and run the following command in the terminal:
+```cmd
+dotnet new web -o NameOfYourProjectHere -f net7.0
+```
+3. Navigate into the newly created project directory:
+```cmd
+cd NameOfYourProject
+```
+4. You can run the API by executing the following command in the project directory:
+```cmd
+dotnet run
 ```

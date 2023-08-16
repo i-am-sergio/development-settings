@@ -48,6 +48,19 @@
     ```cmd
     dotnet add package Swashbuckle.AspNetCore
     ```
+6. After uploaded project to github:
+    - Para restaurar las dependencias, ejecutar:
+    ```cmd
+    dotnet restore
+    ```
+    - Compilar el projecto:
+    ```cmd
+    dotnet build
+    ```
+    - Ejecutar el projecto:
+    ```cmd
+    dotnet run
+    ```
 
 ## Create API (Java with Spring Boot)
 1. Install JDK (Choose version 17 or 20, depending on your preference)

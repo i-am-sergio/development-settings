@@ -64,17 +64,26 @@
 
 ## Create API (Java with Spring Boot)
 1. Install JDK (Choose version 17 or 20, depending on your preference)
-2. Configure Your Development Environment: Eclipse or Visual Studio Code
-3. Make sure your IDE is set up to work with Java and Maven.
+2. Install Dependency manager (Maven o Gradle):
+    - Download maven binary zip and copy to `C:\Program Files\Maven` (create Maven Folder if not exist)
+3. Configure Your Environment variables:
+    - JAVA_HOME = `C:\Program Files\Java\jdk-17` (This could be another version of JDK)
+    - MAVEN_HOME = `C:\Program Files\Maven\apache-maven-3.9.4` (This could be another version of Maven)
+    - Add to Path: 
+        - %JAVA_HOME%\bin
+        - %MAVEN_HOME%\bin
+4. Install Visual Studio Code Extensions:
+    - Spring Initializr Java Support (To add dependencies to your project)
+    - Language Support for Java
 4. Create a New Spring Boot Project: 
     - Visit the [Spring Initializr](https://start.spring.io/) website.
     - Choose "Maven" as the project type.
     - Select the desired Spring Boot version.
+    - Select `war` for web app and `jar` for desktop app 
     - Add the "Spring Web" dependency to your project.
     - Click "Generate" and download the generated project ZIP file.
     - Extract the contents of the ZIP file to your preferred directory.
 4. Develop the API:
-    - Open the extracted project in your chosen IDE.
     - Create a new Java class for your API's main application, such as `YourApplicationNameApplication.java`.
     - Annotate the class with `@SpringBootApplication` to indicate the Spring Boot application.
     - Create controller classes in a package like `com.example.yourapplication.controllers`.
@@ -95,17 +104,8 @@
     }
     ```
 6. Run the Application:
-    - In your IDE, run the main application class (YourApplicationNameApplication.java).
-    - The Spring Boot application will start, and you can access your API at http://localhost:8080/hello
-7. Install Swagger for API Documentation (Optional):
-    - Open your pom.xml (Maven configuration) file.
-    - Add the following dependency for Swagger documentation:
-    ```xml
-    <dependency>
-        <groupId>io.springfox</groupId>
-        <artifactId>springfox-boot-starter</artifactId>
-        <version>3.0.0</version>
-    </dependency>
-    ```
-8. Build your project to install the dependency.
-9. Access the Swagger UI documentation at `http://localhost:8080/swagger-ui/index.html`.
+    - Run in Terminal:
+        ```bash
+        mvn spring-boot:run
+        ```
+        The Spring Boot application will start, and you can access your API at http://localhost:8080/hello

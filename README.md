@@ -7,6 +7,7 @@
     npm init -y
     npm install express
     ```
+    * Add `"type": "module"` in package.json
 3. Create an entry file for your Express application, for example, app.js.
 4. Open app.js in a code editor and set up your Express application:
     ```javascript

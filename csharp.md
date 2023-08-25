@@ -12,7 +12,7 @@ You can visit the website https://www.nuget.org/ to find more packages.
     ```bash
     dotnet add package Microsoft.EntityFrameworkCore.InMemory
     ```
-    This package provides in-memory database functionality for Entity Framework Core. It's commonly used for testing and development scenarios where you don't want to use an actual database.
+    EF is an Object-Relational Mapping (ORM) library. This package provides in-memory database functionality for Entity Framework Core. It's commonly used for testing and development scenarios where you don't want to use an actual database.
 
 3. **For Connection with SQLite:**
     ```bash

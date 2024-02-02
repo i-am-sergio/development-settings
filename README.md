@@ -31,7 +31,8 @@
     node app.js
     ```
 
-## Create API (C# with .NET) [Dotnet Settings](csharp.md)
+## Create API (C# with .NET) 
+[Click here for Dotnet Settings](csharp.md)
 
 1. Install dotnet SDK from the official .NET website.
 2. Navigate to the Desktop and run the following command in the terminal:
@@ -65,6 +66,7 @@
     ```
 
 ## Create API (Java with Spring Boot)
+[Click here for Java Settings](csharp.md)
 1. Install JDK (Choose version 17 or 20, depending on your preference)
 2. Install Dependency manager (Maven o Gradle):
     - Download maven binary zip and copy to `C:\Program Files\Maven` (create Maven Folder if not exist)

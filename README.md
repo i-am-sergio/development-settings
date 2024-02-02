@@ -1,5 +1,6 @@
 # Development-configs
-## Create API (NodeJS with ExpressJS)
+## Create API (NodeJS with ExpressJS) 
+[Click here for Nodejs Settings](nodejs.md)
 
 1. Install Node.js and npm (Node Package Manager)
 2. Navigate to the directory where you want to create your project and run the following commands in the terminal:
@@ -30,7 +31,7 @@
     node app.js
     ```
 
-## Create API (C# with .NET)
+## Create API (C# with .NET) [Dotnet Settings](csharp.md)
 
 1. Install dotnet SDK from the official .NET website.
 2. Navigate to the Desktop and run the following command in the terminal:

@@ -35,33 +35,35 @@
 [Click here for Dotnet Settings](csharp.md)
 
 1. Install dotnet SDK from the official .NET website.
-2. Navigate to the Desktop and run the following command in the terminal:
-    ```cmd
-    dotnet new web -o NameOfYourProjectHere -f net7.0
+2. Create new project:
+    - Web Application Template
+    ```bash
+    dotnet new web -n NameOfYourProject
     ```
-3. Navigate into the newly created project directory:
-    ```cmd
-    cd NameOfYourProject
+    - Console Project Template
+    ```
+    dotnet new console -n NameOfYourProject
+    ```
+    - List Templates:
+    ```
+    dotnet new --list
     ```
 4. You can run the API by executing the following command in the project directory:
-    ```cmd
+    ```bash
+    cd NameOfYourProject
     dotnet run
     ```
-5. Install Swashbuckle package:
-    ```cmd
-    dotnet add package Swashbuckle.AspNetCore
-    ```
-6. After uploaded project to github:
-    - Para restaurar las dependencias, ejecutar:
-    ```cmd
+5. After uploaded project to github:
+    - Restore dependencies if *NameOfYourProject.csproj* has been modified:
+    ```bash
     dotnet restore
     ```
-    - Compilar el projecto:
-    ```cmd
+    - Compile project:
+    ```bash
     dotnet build
     ```
-    - Ejecutar el projecto:
-    ```cmd
+    - Execute project:
+    ```bash
     dotnet run
     ```
 

@@ -15,17 +15,17 @@ You can visit the website https://www.nuget.org/ to find more packages.
     dotnet add package Microsoft.EntityFrameworkCore
     ```
     Entity Framework Core is an Object-Relational Mapping (ORM) that simplifies access to relational databases in .NET applications. 
-   - **To Mysql**
+   - ***To Mysql***
      ```bash
-    dotnet add package Pomelo.EntityFrameworkCore.MySql
+     dotnet add package Pomelo.EntityFrameworkCore.MySql
      ```
      This package extends Entity Framework Core to support MySQL databases, allowing seamless integration with MySQL in your .NET projects.
-   - **To Sql server**
+   - ***To Sql server***
      ```bash
      dotnet add package Microsoft.EntityFrameworkCore.SqlServer
      ```
      This package adds support for SQL Server to Entity Framework Core, enabling you to work with SQL Server databases in your .NET applications.
-   - **To PostgreSql**
+   - ***To PostgreSql***
      ```bash
      dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
      ```

@@ -10,18 +10,91 @@ You can visit the website https://www.nuget.org/ to find more packages.
   ```bash
   dotnet tool install --global dotnet-ef
   ```
-  Add to global variables (~/.bashrc or ~/.zshrc) copy the following:
-  ```vim
-  export PATH=$PATH:$HOME/.dotnet/tools
-  ```
-  Reload global variables:
-  ```bash
-  source ~/.zshrc
-  ```
-- Generate Migrations
-  ```bash
-  dotnet ef migrations add NamedYourMigration --startup-project ../ProjectName
-  ```
+  - Add to global variables (~/.bashrc or ~/.zshrc) copy the following:
+    ```vim
+    export PATH=$PATH:$HOME/.dotnet/tools
+    ```
+  - Reload global variables:
+    ```bash
+    source ~/.zshrc
+    ```
+- Database Connection
+  - Edit *appsettings.json* according to the sql database
+    ```json
+    "ConnectionStrings": {
+      "MySqlConnection": "Server=monorail.proxy.rlwy.net;Port=18098;Database=railway;User=root;Password=EH6F352114bCH14Ee5BG6E6c2EeDEbb5;ConvertZeroDateTime=True;",
+      "PostgresConnection": "Server=viaduct.proxy.rlwy.net;Port=15406;Database=railway;Username=postgres;Password=52aBGEaeFE-ADbe22gG2aG11CADdFdcF",
+      "SqlServerConnection": "Data Source=mssql-162515-0.cloudclusters.net,19796;Initial Catalog=sqlserverdb;User Id=root;Password=Admin123;TrustServerCertificate=True;"
+    }
+    ```
+  - Install Entity Framework
+    ```bash
+    dotnet add package MySql.EntityFrameworkCore # for MySql
+    ```
+  - Add Class Models (*As follow sample*)
+    ```csharp
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+    
+    namespace MyWebProject;
+    
+    public class UserModel
+    {
+        [Key][DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public required string Name { get; set; }
+        public required string Email { get; set; }
+        public required string Password { get; set; }
+    }
+
+    ```
+  - Add DBContext (*create context/Context.cs*)
+    ```csharp
+    using Microsoft.EntityFrameworkCore;
+    namespace MyWebProject;
+    
+    public class Context : DbContext
+    {
+        public Context(DbContextOptions<Context> options) : base(options) { }
+        public DbSet<UserModel> Users { get; set; }
+    }
+    ```
+  - Add DBContext in main file (*Program.cs*)
+    ```csharp
+    using Microsoft.EntityFrameworkCore;
+    using MyWebProject;
+    
+    var builder = WebApplication.CreateBuilder(args);
+    var connectionString = builder.Configuration.GetConnectionString("SqlServerConnection") ?? string.Empty;
+    
+    builder.Services.AddControllers();
+    builder.Services.AddDbContext<SqlContext>(
+        options => options.UseSqlServer(connectionString)
+        // options => options.UseMySQL(connectionString) // Use MySQL
+        // options => options.UseNpgsql(connectionString) // Use PostgreSQL
+        // options => options.UseSqlite("Data Source=MiProyectoWeb.db") // Use SQLite
+    );
+    
+    var app = builder.Build();
+    
+    app.UseAuthorization(); // Enable authorization
+    app.MapControllers(); // Map the controllers
+    
+    app.Run();
+    ```
+  - Migrations
+      - Add migration:
+      ```bash
+      dotnet ef migrations add NamedYourMigration
+      ```
+      - Apply migrations:
+      ```bash
+      dotnet ef database update
+      ```
+      - Undo migration:
+      ```bash
+      dotnet ef database update NamedYourPreviewMigration
+      ```
 
 ## Pakages
 
@@ -38,7 +111,7 @@ You can visit the website https://www.nuget.org/ to find more packages.
     Entity Framework Core is an ORM that simplifies access to relational databases in .NET applications. 
    - ***To Mysql***
      ```bash
-     dotnet add package Pomelo.EntityFrameworkCore.MySql
+     dotnet add package MySql.EntityFrameworkCore
      ```
      This package extends Entity Framework Core to support MySQL databases, allowing seamless integration with MySQL.
    - ***To Sql server***

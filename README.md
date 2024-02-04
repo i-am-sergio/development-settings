@@ -115,3 +115,26 @@
         mvn spring-boot:run
         ```
         The Spring Boot application will start, and you can access your API at http://localhost:8080/hello
+
+
+## Create API (PHP with Laravel)
+[Click here for Laravel Settings](php.md)
+1. Install php (Choose version 8 o higher)
+    - Linux (debian):
+    ```bash
+    sudo apt install php php-curl
+    ```
+2. Install composer
+    - Linux (debian):
+     ```bash
+     sudo apt install composer
+     ```
+3. Create Laravel project
+     ```bash
+     composer create-project --prefer-dist laravel/laravel project-name
+     ```
+4. Run Application
+    ```bash
+    cd example-app
+    php artisan serve
+    ```

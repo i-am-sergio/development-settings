@@ -1,0 +1,67 @@
+{
+    "editor.tabSize": 4,
+    "editor.fontWeight": "600",
+    "grunt.autoDetect": "on",
+    "terminal.integrated.gpuAcceleration": "on",
+    "editor.fontFamily": "'CaskaydiaCove Nerd Font', 'monospace', monospace",
+    "workbench.iconTheme": "symbols",
+
+    "code-runner.runInTerminal": true, // se agrega para que code runner se ejecute en terminal integrado
+    "code-runner.saveFileBeforeRun": true,
+    "workbench.colorTheme": "Min Dark",
+    "editor.minimap.enabled": false,
+    // "editor.minimap.maxColumn": 50, // minimap width
+    "emmet.includeLanguages": {
+        "django-html": "html"
+    },
+    "terminal.integrated.fontFamily": "Hack Nerd Font Mono",
+    "workbench.colorCustomizations": {
+        "[Min Dark]": { // edit color theme properties
+            // "editor.background": "#000",
+            // "sideBar.border": "#0s00",
+            // "sideBar.background": "#000",
+            // "sideBarSectionHeader.background": "#0d0d0d",
+            // "activityBar.background": "#101010",
+            // "activityBar.foreground": "#ddd",
+            // "statusBar.background": "#101010",
+            // "statusBar.border": "#5a5a5a",
+            // "titleBar.activeBackground": "#000",
+            // "titleBar.activeForeground": "#ddd",
+            // "editorGroupHeader.tabsBackground": "#000",
+            // "tab.border": "#000",
+            // "tab.inactiveBackground": "#000",
+            // "tab.activeForeground": "#5ca3ff",
+            // "tab.inactiveForeground": "#a7a7a7",
+            // "tab.hoverBackground": "#131313",
+            // "tab.activeBorderTop": "#000",
+            "tab.activeBorder": "#7e7e7e",
+            "editor.lineHighlightBorder": "#5c5c5ca8",
+            "editorIndentGuide.activeBackground1": "#b8b8b8",
+            "editorIndentGuide.background1": "#b8b8b82f",
+        }
+    },
+    // includePath for c++ (debian)
+    "C_Cpp.default.includePath": [
+        "/usr/src/googletest/googletest/include",
+        "/usr/src/googletest/googlemock/include",
+        "/usr/include/vtk-9.1",
+    ],
+    // ignore rules for sonarlint
+    "sonarlint.rules": {
+        "php:S4833": {
+            "level": "off"
+        }
+    },
+    // Formatter
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 4
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2
+    },
+    "symbols.hidesExplorerArrows": false,
+    "material-icon-theme.saturation": 1,
+    "material-icon-theme.folders.color": "#90a4ae",
+}

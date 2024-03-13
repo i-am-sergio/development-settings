@@ -1,4 +1,11 @@
 {
+    // ignore folders
+    "files.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/.idea": true,
+        "**/tmp": true,
+    },
     "editor.tabSize": 4,
     "editor.fontWeight": "600",
     "grunt.autoDetect": "on",

@@ -1,4 +1,25 @@
-# PHP - Laravel
+## PHP - Laravel
+
+
+1. Install php (Choose version 8 o higher)
+    - Linux (debian):
+    ```bash
+    sudo apt install php php-curl
+    ```
+2. Install composer
+    - Linux (debian):
+     ```bash
+     sudo apt install composer
+     ```
+3. Create Laravel project
+     ```bash
+     composer create-project --prefer-dist laravel/laravel project-name
+     ```
+4. Run Application
+    ```bash
+    cd example-app
+    php artisan serve
+    ```
 
 ## Settings
 - Database Connection

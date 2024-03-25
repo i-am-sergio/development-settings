@@ -1,4 +1,39 @@
-# Most used packages in C# - .NET
+## API Rest Start
+1. Install dotnet SDK from the official .NET website.
+2. Create new project:
+    - Web Application Template
+    ```bash
+    dotnet new web -n NameOfYourProject
+    ```
+    - Console Project Template
+    ```
+    dotnet new console -n NameOfYourProject
+    ```
+    - List Templates:
+    ```
+    dotnet new --list
+    ```
+4. You can run the API by executing the following command in the project directory:
+    ```bash
+    cd NameOfYourProject
+    dotnet run
+    ```
+5. After uploaded project to github:
+    - Restore dependencies if *NameOfYourProject.csproj* has been modified:
+    ```bash
+    dotnet restore
+    ```
+    - Compile project:
+    ```bash
+    dotnet build
+    ```
+    - Execute project:
+    ```bash
+    dotnet run
+    ```
+
+
+## Most used packages in C# - .NET
 You can visit the website https://www.nuget.org/ to find more packages.
 
 ## Settings

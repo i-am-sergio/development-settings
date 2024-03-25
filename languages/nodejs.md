@@ -1,3 +1,35 @@
+## API Rest start
+
+1. Install Node.js and npm (Node Package Manager)
+2. Navigate to the directory where you want to create your project and run the following commands in the terminal:
+    ```cmd
+    npm init -y
+    npm install express
+    ```
+    * Add `"type": "module"` in package.json
+3. Create an entry file for your Express application, for example, app.js.
+4. Open app.js in a code editor and set up your Express application:
+    ```javascript
+    import express from 'express';
+
+    const app = express();
+    const port = 3000;
+
+    app.get('/', (req, res) => {
+      res.send('Hello, Express!');
+    });
+
+    app.listen(port, () => {
+      console.log(`Server is running on port ${port}`);
+    });
+
+    ```
+5. Run your Express application using the following command:
+    ```cmd
+    node app.js
+    ```
+
+
 ## Most used packages in NodeJs - NPM
 
 You can visit the website https://www.npmjs.com/ to find more packages.

@@ -1,198 +1,24 @@
 # Development Settings
 
-## Docker images
+## A. Git Configurations
 
-- **[Vite Projects](docker/vite_projects.md)**
-- **[Spring Boot Projects](docker/springboot-projects.md)**
-- **[Golang Projects](docker/golang_projects.md)**
-
-## API Rest Configurations
-
-### **1. Create API (NodeJS with ExpressJS)** 
-[Click here for Nodejs Settings](nodejs.md)
-
-1. Install Node.js and npm (Node Package Manager)
-2. Navigate to the directory where you want to create your project and run the following commands in the terminal:
-    ```cmd
-    npm init -y
-    npm install express
-    ```
-    * Add `"type": "module"` in package.json
-3. Create an entry file for your Express application, for example, app.js.
-4. Open app.js in a code editor and set up your Express application:
-    ```javascript
-    import express from 'express';
-
-    const app = express();
-    const port = 3000;
-
-    app.get('/', (req, res) => {
-      res.send('Hello, Express!');
-    });
-
-    app.listen(port, () => {
-      console.log(`Server is running on port ${port}`);
-    });
-
-    ```
-5. Run your Express application using the following command:
-    ```cmd
-    node app.js
-    ```
-
-### **2. Create API (C# with .NET)** 
-[Click here for Dotnet Settings](csharp.md)
-
-1. Install dotnet SDK from the official .NET website.
-2. Create new project:
-    - Web Application Template
-    ```bash
-    dotnet new web -n NameOfYourProject
-    ```
-    - Console Project Template
-    ```
-    dotnet new console -n NameOfYourProject
-    ```
-    - List Templates:
-    ```
-    dotnet new --list
-    ```
-4. You can run the API by executing the following command in the project directory:
-    ```bash
-    cd NameOfYourProject
-    dotnet run
-    ```
-5. After uploaded project to github:
-    - Restore dependencies if *NameOfYourProject.csproj* has been modified:
-    ```bash
-    dotnet restore
-    ```
-    - Compile project:
-    ```bash
-    dotnet build
-    ```
-    - Execute project:
-    ```bash
-    dotnet run
-    ```
-
-### **3. Create API (Java with Spring Boot)**
-[Click here for Java Settings](csharp.md)
-1. Install JDK (Choose version 17 or 20, depending on your preference)
-2. Install Dependency manager (Maven o Gradle):
-    - Download maven binary zip and copy to `C:\Program Files\Maven` (create Maven Folder if not exist)
-3. Configure Your Environment variables:
-    - JAVA_HOME = `C:\Program Files\Java\jdk-17` (This could be another version of JDK)
-    - MAVEN_HOME = `C:\Program Files\Maven\apache-maven-3.9.4` (This could be another version of Maven)
-    - Add to Path: 
-        - %JAVA_HOME%\bin
-        - %MAVEN_HOME%\bin
-4. Install Visual Studio Code Extensions:
-    - Spring Initializr Java Support (To add dependencies to your project)
-    - Language Support for Java
-4. Create a New Spring Boot Project: 
-    - Visit the [Spring Initializr](https://start.spring.io/) website.
-    - Choose "Maven" as the project type.
-    - Select the desired Spring Boot version.
-    - Select `war` for web app and `jar` for desktop app 
-    - Add the "Spring Web" dependency to your project.
-    - Click "Generate" and download the generated project ZIP file.
-    - Extract the contents of the ZIP file to your preferred directory.
-4. Develop the API:
-    - Create a new Java class for your API's main application, such as `YourApplicationNameApplication.java`.
-    - Annotate the class with `@SpringBootApplication` to indicate the Spring Boot application.
-    - Create controller classes in a package like `com.example.yourapplication.controllers`.
-    - Define API endpoints using annotations like `@RestController` and `@GetMapping`.
-5. Write the API Code:
-    ```java
-    package com.example.yourapplication.controllers;
-
-    import org.springframework.web.bind.annotation.GetMapping;
-    import org.springframework.web.bind.annotation.RestController;
-
-    @RestController
-    public class HelloController {
-        @GetMapping("/hello")
-        public String hello() {
-            return "Hello, Spring Boot!";
-        }
-    }
-    ```
-6. Run the Application:
-    - Run in Terminal:
-        ```bash
-        mvn spring-boot:run
-        ```
-        The Spring Boot application will start, and you can access your API at http://localhost:8080/hello
+- ***[Git Commands](languages/git.md)***
 
 
-### **4. Create API (PHP with Laravel)**
-[Click here for Laravel Settings](php.md)
-1. Install php (Choose version 8 o higher)
-    - Linux (debian):
-    ```bash
-    sudo apt install php php-curl
-    ```
-2. Install composer
-    - Linux (debian):
-     ```bash
-     sudo apt install composer
-     ```
-3. Create Laravel project
-     ```bash
-     composer create-project --prefer-dist laravel/laravel project-name
-     ```
-4. Run Application
-    ```bash
-    cd example-app
-    php artisan serve
-    ```
-### **5. Create API (Python with Django)**
-[Click here for Django Settings](python.md)
-1. Install python (3 o higher)
-2. Install pip:
-    - Linux (debian):
-    ```bash
-    sudo apt install pip
-    ```
-3. Install virtualenv:
-    - Linux (debian):
-    ```bash
-    sudo apt install python3-virtualenv
-    ```
-    - Fedora and Windows:
-    ```bash
-    pip install virtualenv
-    ```
-4. Create virtual environment
-    ```bash
-    mkdir myproject && cd myproject
-    virtualenv venv
-    ```
-    - *Activate virtual environment:*
-      - Windows:
-        ```bash
-        venv\Scripts\activate
-        ```
-      - Linux and MacOS:
-        ```bash
-        source venv/bin/activate
-        ```
-    - *Exit virtual environment:*
-      - Linux and MacOS:
-        ```bash
-        deactivate
-        ```
-6. Install Django (into venv):
-    - Linux (debian):
-    ```bash
-    pip install django
-    ```
-7. Create new application:
-    ```bash
-    python manage.py startapp myapp
-    ```
-9. Run application
-    ```bash
-    python manage.py runserver
-    ```
+## B. Docker images
+
+- ***[Vite Projects](docker/vite_projects.md)***
+- ***[Spring Boot Projects](docker/springboot-projects.md)***
+- ***[Golang Projects](docker/golang_projects.md)***
+
+## C. API Rest Configurations
+
+1. ***[Nodejs + ExpressJs Settings](languages/nodejs.md)*** 
+
+2. ***[C# + .NET Settings](languages/csharp.md)***
+
+3. ***[Java + Spring Boot Settings](languages/java.md)***
+
+4. ***[PHP + Laravel Settings](languages/php.md)***
+
+5. ***[Python + Django Settings](languages/python.md)***

@@ -1,5 +1,14 @@
-# Development-configs
-## Create API (NodeJS with ExpressJS) 
+# Development Settings
+
+## Docker images
+
+- **[Vite Projects](docker/vite_projects.md)**
+- **[Spring Boot Projects](docker/springboot-projects.md)**
+- **[Golang Projects](docker/golang_projects.md)**
+
+## API Rest Configurations
+
+### **1. Create API (NodeJS with ExpressJS)** 
 [Click here for Nodejs Settings](nodejs.md)
 
 1. Install Node.js and npm (Node Package Manager)
@@ -31,7 +40,7 @@
     node app.js
     ```
 
-## Create API (C# with .NET) 
+### **2. Create API (C# with .NET)** 
 [Click here for Dotnet Settings](csharp.md)
 
 1. Install dotnet SDK from the official .NET website.
@@ -67,7 +76,7 @@
     dotnet run
     ```
 
-## Create API (Java with Spring Boot)
+### **3. Create API (Java with Spring Boot)**
 [Click here for Java Settings](csharp.md)
 1. Install JDK (Choose version 17 or 20, depending on your preference)
 2. Install Dependency manager (Maven o Gradle):
@@ -117,7 +126,7 @@
         The Spring Boot application will start, and you can access your API at http://localhost:8080/hello
 
 
-## Create API (PHP with Laravel)
+### **4. Create API (PHP with Laravel)**
 [Click here for Laravel Settings](php.md)
 1. Install php (Choose version 8 o higher)
     - Linux (debian):
@@ -138,7 +147,7 @@
     cd example-app
     php artisan serve
     ```
-## Create API (Python with Django)
+### **5. Create API (Python with Django)**
 [Click here for Django Settings](python.md)
 1. Install python (3 o higher)
 2. Install pip:

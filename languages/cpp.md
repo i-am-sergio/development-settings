@@ -1,5 +1,100 @@
-# Debuggin in C++
-## In terminal (with GDB)
+## Cpp project settings
+
+## Install package manager for windows
+
+1. **Installing Scoop**: [*Click Here for install scoop*](https://scoop.sh/)
+    ```powershell
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+    Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+    ```
+
+2. **Verify Installation**: After installation completes, verify Scoop is installed by running:
+    ```powershell
+    scoop help
+    ```
+
+3. **Install GCC Compiler**: Once Scoop is installed, you can install GCC compiler by running:
+    ```powershell
+    scoop install gcc
+    ```
+
+4. **Install CMake**: Install CMake. [Click Here](https://cmake.org/download/)
+
+### Create Project
+
+1. **Create CMakeLists.txt**: In the root directory project. Set up variables before the project() line in CMakeLists.txt
+    ```CMake
+    cmake_minimum_required(VERSION 3.10)
+
+    set(CMAKE_C_COMPILER "C:/Users/sergi/scoop/apps/gcc/current/bin/gcc.exe")
+    set(CMAKE_CXX_COMPILER "C:/Users/sergi/scoop/apps/gcc/current/bin/g++.exe")
+
+    project(MyProject)
+
+    # ...
+
+    add_executable(MyProject main.cpp)
+    ```
+    *In CMAKE_C_COMPILER, enter your compiler path, it may not be the same*
+
+2. **Create Build Directory**: Open PowerShell in your desired location and run:
+    ```powershell
+    mkdir build && cd build
+    ```
+
+3. **Run CMake**: Run CMake to generate build files for your project. You have 2 options:
+    - **For `Make`**
+        - Install Make:
+            ```powershell
+            scoop install make
+            ```
+        - Use "MinGW Makefiles" as the generator for GCC for your project:
+            ```powershell
+            cmake -G "MinGW Makefiles" ..
+            ```
+            *If not function, try:*
+            ```powershell
+            cmake -G "MinGW Makefiles" -DCMAKE_MAKE_PROGRAM="C:\path\to\make.exe" ..
+            ```
+
+    - **For `Ninja`** (Modern and Fazt buildin)
+        - Install Ninja:
+            ```powershell
+            scoop install ninja
+            ```
+        - Use "Ninja" as the generator for GCC for your project
+            ```powershell
+            cmake -G Ninja ..
+            ```
+
+4. **Build Project**: Once CMake has configured the project, build it by running:
+    ```powershell
+    cmake --build .
+    ```
+
+### Execute Project:
+
+1. **Run Executable**: After successful build, you can find the executable in the build directory. Run it using:
+    ```powershell
+    ./executable.exe
+    ```
+
+### Visual Studio Code Configuration Path
+
+- If you have used scoop, put the following configurations in `settings.json` in VSCode
+    ```json
+    {
+        "C_Cpp.default.includePath": [
+            "C:/Users/sergi/scoop/apps/gcc/13.2.0/include/**",
+            // other library paths ...
+            "C:/Users/sergi/scoop/apps/glfw/3.4/include/**", // for glfw library headers
+        ],
+    }
+    ```
+
+
+## Debuggin in C++
+### In terminal (with GDB)
 1. **Compile your program in the terminal:**
     ```bash
     g++ programa.cpp -g -o programa
@@ -53,7 +148,7 @@
     (gdb) quit
     ```  
 
-## In Vscode
+### In VScode
 1. **Open the Source File**
 2. **Set Breakpoints:**
     Click on the left margin of the source code at the line(s) where you want to set breakpoints. A red dot will appear indicating a breakpoint.

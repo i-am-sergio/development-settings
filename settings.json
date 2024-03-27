@@ -49,9 +49,11 @@
     },
     // includePath for c++ (debian)
     "C_Cpp.default.includePath": [
-        "/usr/src/googletest/googletest/include",
-        "/usr/src/googletest/googlemock/include",
-        "/usr/include/vtk-9.1",
+        "/usr/src/googletest/googletest/include", // google test include path debian
+        "/usr/src/googletest/googlemock/include", // google test include path debian
+        "/usr/include/vtk-9.1", // vtk include path debian
+        "C:/Users/sergi/scoop/apps/gcc/13.2.0/include/**", // windows with scoop
+        "C:/Users/sergi/scoop/apps/glfw/3.4/include/**", // windows with scoop
     ],
     // ignore rules for sonarlint
     "sonarlint.rules": {

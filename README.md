@@ -22,3 +22,7 @@
 4. ***[PHP + Laravel Settings](languages/php.md)***
 
 5. ***[Python + Django Settings](languages/python.md)***
+
+## D. C++ Configurations
+
+- ***[Install gcc compiler, make, cmake Windows](languages/cpp.md)***

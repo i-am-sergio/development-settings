@@ -4,6 +4,33 @@
 2. **Download glfw**: `Binaries` for windows. [**Click Here**](https://www.glfw.org/download.html)
 3. **Extract Folders**: Put folder in C root directory `C:\`
 
+## Configure `.vscode/c_cpp_properties.json`:
+```json
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${default}",
+                // "C:\\glfw-3.4.bin.WIN64\\include", // if you installed GLFW from download
+                "C:\\Users\\sergi\\scoop\\apps\\glfw\\3.4\\include", // If you installed GLFW with Scoop"
+                "C:\\glew-2.1.0\\include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "C:\\Users\\sergi\\scoop\\apps\\gcc\\current\\bin\\gcc.exe",
+            "cStandard": "c17",
+            "cppStandard": "gnu++17",
+            "intelliSenseMode": "windows-gcc-x64"
+        }
+    ],
+    "version": 4
+}
+```
+
 ## Compile OpenGL project
 
 1. **Compile with GCC**: Run the following command:
@@ -27,27 +54,30 @@
         cmake_minimum_required(VERSION 3.10)
         project(OpenGLProject)
 
-        # Version of C++ language
+        # Configurar la versión del lenguaje C++
         set(CMAKE_CXX_STANDARD 17)
         set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
         # Add directories of the libraries for including (header files)
         include_directories(
-            C:/glfw-3.4.bin.WIN64/include
+            # C:/glfw-3.4.bin.WIN64/include # If you downloaded GLFW binaries from the website
+            C:/Users/sergi/scoop/apps/glfw/3.4/include # If you installed GLFW with Scoop
             C:/glew-2.1.0/include
         )
 
         # Add the directories of the libraries for linking
         link_directories(
             C:/glew-2.1.0/lib/Release/x64
-            C:/glfw-3.4.bin.WIN64/lib-mingw-w64
+            # C:/glfw-3.4.bin.WIN64/lib-mingw-w64 # If you downloaded GLFW binaries from the website
+            C:/Users/sergi/scoop/apps/glfw/3.4/lib-mingw-w64 # If you installed GLFW with Scoop
         )
 
+        # Add dll for run executable with GLFW
         configure_file(C:/glfw-3.4.bin.WIN64/lib-mingw-w64/glfw3.dll ${CMAKE_BINARY_DIR}/glfw3.dll COPYONLY)
 
         add_executable(OpenGLProject src/main.cpp)
 
-        # Link the openGL and GLFW libraries
+        # Link the libraries
         target_link_libraries(OpenGLProject -lopengl32)
         target_link_libraries(OpenGLProject -lglew32)
         target_link_libraries(OpenGLProject -lglfw3dll)
@@ -177,4 +207,3 @@
     ```
 
 [***View More Examples***](https://cs.lmu.edu/~ray/notes/openglexamples/)
-

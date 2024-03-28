@@ -26,3 +26,4 @@
 ## D. C++ Configurations
 
 - ***[Install gcc compiler, make, cmake Windows](languages/cpp.md)***
+- ***[Install and configure OpenGL GLFW & GLEW](cpp/opengl.md)***

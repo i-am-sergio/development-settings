@@ -1,10 +1,10 @@
-## OpenGL Configurations
+## OpenGL Configurations on Windows
 
 1. **Download glew**: `Binaries` for windows. [**Click Here**](https://glew.sourceforge.net/)
 2. **Download glfw**: `Binaries` for windows. [**Click Here**](https://www.glfw.org/download.html)
 3. **Extract Folders**: Put folder in C root directory `C:\`
 
-## Configure `.vscode/c_cpp_properties.json`:
+### 1. Configure `.vscode/c_cpp_properties.json`:
 ```json
 {
     "configurations": [
@@ -31,7 +31,7 @@
 }
 ```
 
-## Compile OpenGL project
+### 2. Compile OpenGL project
 
 1. **Compile with GCC**: Run the following command:
     ```powershell
@@ -207,3 +207,102 @@
     ```
 
 [***View More Examples***](https://cs.lmu.edu/~ray/notes/openglexamples/)
+
+
+
+## OpenGL Configurations on Linux (Debian)
+
+### 1. Install CMake, GLFW, GLUT and dependencies
+    
+```bash
+sudo apt install cmake xorg-dev libglu1-mesa-dev libxcursor-dev libxinerama-dev libxrandr-dev libxi-dev
+```
+```bash
+sudo apt install libx11-dev libglu1-mesa-dev freeglut3-dev libglew2.2 libglew-dev libglu1-mesa libgl1-mesa-glx libgl1-mesa-dev libglfw3-dev libglfw3
+```
+```bash
+sudo apt install libxkbcommon-dev build-essential xorg 
+```
+
+### 2. Compile project that uses GLFW
+
+- **Using g++:**
+    ```bash
+    g++ main.cpp -o executable -std=c++17 -Wall \
+    -I/usr/include/GL -I/usr/include/GLFW \
+    -lGL -lglfw
+    ```
+- **Using CMake:** Create `CMakeLists.txt` file:
+    ```Cmake
+    cmake_minimum_required(VERSION 3.10)
+    project(OpenGLProject)
+
+    set(CMAKE_CXX_STANDARD 17)
+    cmake_policy(SET CMP0072 NEW)
+
+    # Add source code to generate executable
+    add_executable(executable main.cpp)
+
+    # Find packages
+    # If find OpenGL set OPENGL_FOUND, OPENGL_INCLUDE_DIRS, OPENGL_LIBRARIES
+    find_package(OpenGL REQUIRED) 
+    # If find GLFW set GLFW_FOUND, GLFW_INCLUDE_DIRS
+    find_package(glfw3 REQUIRED)
+
+    # Include the headers of the libraries
+    include_directories(
+        ${OPENGL_INCLUDE_DIRS} 
+        ${GLFW_INCLUDE_DIRS}
+    )
+
+    # Link the libraries
+    target_link_libraries(
+        executable 
+        ${OPENGL_LIBRARIES} # equivale a GL (-lGL en el compilador)
+        glfw # (-lglfw en el compilador)
+    )
+
+    ```
+
+## Compile project that use GLUT
+- **Using g++:**
+    ```bash
+    g++ main.cpp -o executable -std=c++17 -Wall \
+    -I/usr/include/GL \
+    -lGL -lglut -lGLU
+    ```
+- **Using CMake:** Create `CMakeLists.txt` file:
+    ```Cmake
+    cmake_minimum_required(VERSION 3.10)
+    project(OpenGLProject)
+
+    set(CMAKE_CXX_STANDARD 17)
+    cmake_policy(SET CMP0072 NEW)
+
+    # Add source code to generate executable
+    add_executable(executable main.cpp)
+
+    # Find packages
+    # If find OpenGL set OPENGL_FOUND, OPENGL_INCLUDE_DIRS, OPENGL_LIBRARIES
+    find_package(OpenGL REQUIRED) 
+    # If find GLUT set GLUT_FOUND, GLUT_INCLUDE_DIRS, GLUT_LIBRARIES
+    find_package(GLUT REQUIRED)
+
+    # Include the headers of the libraries
+    include_directories(
+        ${OPENGL_INCLUDE_DIRS} 
+        # ${GLFW_INCLUDE_DIRS} 
+        ${GLUT_INCLUDE_DIRS} 
+        # ${GLEW_INCLUDE_DIRS} 
+    )
+
+    # Link the libraries
+    target_link_libraries(
+        executable 
+        ${OPENGL_LIBRARIES} # equivale a GL (-lGL en el compilador)
+        glut # (-lglut en el compilador)
+    )
+
+    ```
+
+[***View Examples using GLUT***](https://cs.lmu.edu/~ray/notes/openglexamples/)

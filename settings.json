@@ -1,10 +1,12 @@
 {
     // ignore folders
     "files.exclude": {
-        "**/.git": true,
-        "**/node_modules": true,
-        "**/.idea": true,
-        "**/tmp": true,
+        "**/.git": true, // git
+        "**/node_modules": true, // node
+        "**/.idea": true, // jetbrains
+        "**/tmp": true, // python
+        "**/obj": true, // dotnet
+        "**/bin": true, // dotnet
     },
     "editor.tabSize": 4,
     "editor.fontWeight": "600",
@@ -15,7 +17,8 @@
 
     "code-runner.runInTerminal": true, // se agrega para que code runner se ejecute en terminal integrado
     "code-runner.saveFileBeforeRun": true,
-    "workbench.colorTheme": "Min Dark",
+    "workbench.colorTheme": "Aura Dark (Soft Text)",
+    "workbench.editor.enablePreview": false, // disable preview (abre en nueva pestaña el file)
     "editor.minimap.enabled": false,
     // "editor.minimap.maxColumn": 50, // minimap width
     "emmet.includeLanguages": {
@@ -47,14 +50,6 @@
             "editorIndentGuide.background1": "#b8b8b82f",
         }
     },
-    // includePath for c++ (debian)
-    "C_Cpp.default.includePath": [
-        "/usr/src/googletest/googletest/include", // google test include path debian
-        "/usr/src/googletest/googlemock/include", // google test include path debian
-        "/usr/include/vtk-9.1", // vtk include path debian
-        "C:/Users/sergi/scoop/apps/gcc/13.2.0/include/**", // windows with scoop
-        "C:/Users/sergi/scoop/apps/glfw/3.4/include/**", // windows with scoop
-    ],
     // ignore rules for sonarlint
     "sonarlint.rules": {
         "php:S4833": {
@@ -73,4 +68,21 @@
     "symbols.hidesExplorerArrows": false,
     "material-icon-theme.saturation": 1,
     "material-icon-theme.folders.color": "#90a4ae",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": true,
+        "markdown": true,
+        "scminput": false
+    },
+
+    "prolog.executablePath": "/bin/gprolog",
+    "extensions.ignoreRecommendations": true,
+    "github.copilot.editor.enableAutoCompletions": true,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "kotlin.languageServer.enabled": false,
+    "kotlin.debugAdapter.enabled": false,
+    "redhat.telemetry.enabled": false,
+
 }

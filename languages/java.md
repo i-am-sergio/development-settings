@@ -1,6 +1,4 @@
 ## API Rest with spring boot
-
-[Click here for Java Settings](languages/java.md)
 1. Install JDK (Choose version 17 or 20, depending on your preference)
 2. Install Dependency manager (Maven o Gradle):
     - Download maven binary zip and copy to `C:\Program Files\Maven` (create Maven Folder if not exist)

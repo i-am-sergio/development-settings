@@ -4,7 +4,11 @@
 
 - ***[Git Commands](languages/git.md)***
 
-## B. API Rest Project Settings
+## B. Bug Reports
+
+1. ***[Java + Spring Boot Bugs](bugs/java.md)***
+
+## C. API Rest Project Settings
 
 1. ***[Nodejs + ExpressJs Settings](languages/nodejs.md)*** 
 2. ***[C# + .NET Settings](languages/csharp.md)***
@@ -12,19 +16,19 @@
 4. ***[PHP + Laravel Settings](languages/php.md)***
 5. ***[Python + Django Settings](languages/python.md)***
 
-## C. Docker Configurations
+## D. Docker Configurations
 
 - ***[Vite Projects](docker/vite_projects.md)***
 - ***[Spring Boot Projects](docker/springboot-projects.md)***
 - ***[Golang Projects](docker/golang_projects.md)***
 - ***[Databases](docker/databases.md)***
 
-## D. Devops
+## E. Devops
 
 1. ***[Jenkins Settings](CI&CD/jenkins.md)***
 2. ***[Github Actions Settings](CI&CD/githubactions.md)***
 
-## E. Testing
+## F. Testing
 
 ### Unit Testing
 
@@ -37,7 +41,7 @@
 ### Performance Testing
 1. ***[Jmeter](testing/Jmeter.md)***
 
-## F. C++ Configurations
+## G. C++ Configurations
 
 - ***[Install gcc compiler, make, cmake Windows](languages/cpp.md)***
 - ***[Install and configure OpenGL GLFW & GLEW](cpp/opengl.md)***

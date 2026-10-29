@@ -1,8 +1,9 @@
 # Development Settings
 
-## A. Git Configurations
+## A. Configurations and others
 
 - ***[Git Commands](languages/git.md)***
+- ***[Clean Storage](linux/clean.md)***
 
 ## B. Bug Reports
 
